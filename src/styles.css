@@ -1,0 +1,105 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+html, body {
+    height: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #4440fa, #936ff5, #ffffff);
+    background-repeat: no-repeat;
+    
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.logo {
+    height: 130px;
+    margin-bottom: 10px;
+}
+
+.body {
+    width: 100%;
+    max-width: 330px;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+}
+
+.form-floating {
+    text-align: start;
+}
+
+.errorLabel {
+    margin-left: 5px;
+}
+
+.registro{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.form{
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    height: 100vh; /* Altura del contenedor */
+}
+
+
+.container {
+    text-align: center;
+    font-family: 'Teko', sans-serif;
+    font-size: 25px;
+  }
+  
+  .FormTable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .FormTable form {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .FormTable input[type="text"],
+  .FormTable input[type="email"],
+  .FormTable input[type="checkbox"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .FormTable button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .FormTable table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+  
+  .FormTable th,
+  .FormTable td {
+    padding: 8px;
+  }
+  
+  .FormTable th {
+    background-color: #08cbfc;
+  }
+  
+  .FormTable tr:nth-child(odd) {
+    background-color: #65f7b3a6;
+  }
+
+  .FormTable tr:nth-child(even) {
+    background-color: #70deffa9;
+  }

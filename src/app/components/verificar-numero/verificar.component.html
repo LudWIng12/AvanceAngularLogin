@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <div *ngIf="!loading" class="body">
+        <img class="logo" src="../../../assets/img/login.png" alt="Login">
+        <h1>Verificar número</h1>
+        <form (ngSubmit)="onVerifyCode()" [formGroup]="OTPCode">
+            <div class="form-floating mb-3">
+                <input type="text" formControlName="otpCode" class="form-control" placeholder="123456">
+                <label>Código de verificación</label>
+                <span *ngIf="OTPCode.get('otpCode')?.hasError('required') && OTPCode.get('otpCode')?.touched" class="text-danger errorLabel">
+                    El <strong>código de verificación</strong> es requerido.
+                </span>
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-info btn-lg" [disabled]="OTPCode.invalid" >Ingresar</button>
+            </div>
+        </form>
+    </div>
+    <app-spinner *ngIf="loading"></app-spinner>
+</div>

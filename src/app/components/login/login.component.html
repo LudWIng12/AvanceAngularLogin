@@ -1,0 +1,69 @@
+<div class="wrapper">
+    <div *ngIf="!loading" class="body">
+        <div class="form2">
+        <img class="logo" src="../../../assets/img/login.png" alt="Login">
+        <h3>Inicio con correo</h3>
+        <form class="blur" (ngSubmit)="MetodoCorreo()" [formGroup]="loginCorreo">
+            <div class="form-floating mb-3">
+                <input type="email" formControlName="email" class="form-control" placeholder="nombre@ejemplo.com">
+                <label>Email</label>
+                <span *ngIf="loginCorreo.get('email')?.hasError('required') && loginCorreo.get('email')?.touched" class="text-warning errorLabel">
+                    El <strong>correo</strong> es requerido.
+                </span>
+                <span *ngIf="loginCorreo.get('email')?.hasError('email') && loginCorreo.get('email')?.touched" class="text-warning errorLabel">
+                    El <strong>correo</strong> es inválido.
+                </span>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" formControlName="password" class="form-control" placeholder="Contraseña">
+                <label>Contraseña</label>
+                <span *ngIf="loginCorreo.get('password')?.hasError('required') && loginCorreo.get('password')?.touched" class="text-warning  errorLabel">
+                    La <strong>contraseña</strong> es requerida.
+                </span>
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn btn-info btn-lg" [disabled]="loginCorreo.invalid" >Iniciar sesión</button>
+            </div>
+        </form>
+    </div>
+
+
+        <br>
+
+        
+
+
+
+       
+
+        <div class="registro">
+        <p class="mt-3">¿No tienes cuenta? <a routerLink="/registrar-usuario">Regístrate</a></p>
+        <a class="mt-3" routerLink="/recuperar-password">Recuperar Contraseña</a>
+
+        </div>
+        
+    </div>
+    
+
+    <div class="body">
+        <img class="logo" src="../../../assets/img/loginNumero.png" alt="Login">
+        <h4>Inicio con numero</h4>
+    <form class="blur" (ngSubmit)="onSignInSubmit()" [formGroup]="loginTelefono">
+        <div class="form-floating mb-3">
+            <input type="text" formControlName="numTelefono" class="form-control" placeholder="1234567891">
+            <label>Número de teléfono</label>
+            <span *ngIf="loginTelefono.get('numTelefono')?.hasError('required') && loginTelefono.get('numTelefono')?.touched" class="text-warning errorLabel">
+                El <strong>telefono</strong> es requerido.
+            </span>
+        </div>
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn btn-info btn-lg" [disabled]="loginTelefono.invalid" >Iniciar sesión</button>
+        </div>
+    </form>
+    <div #recaptchaContainer></div>
+
+</div>
+
+<app-spinner *ngIf="loading"></app-spinner>
+
+</div>
